@@ -1,4 +1,4 @@
-# POO-BD
+
 const  { Pool } = require ("pg") ;
   assync fuction criarConexao (){
   const pool = new Pool ( {
