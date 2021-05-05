@@ -1,6 +1,6 @@
 # POO-BD
 const  { Pool } = require ("pg") ;
-  assync fuction criarConexão () {
+  assync fuction criarConexao (){
   const pool = new Pool ( {
     conectionString:  'postgres: // grvetkznxcuwol : 63a18fec58ad4b25ba2360aaf7eb7cf1debd6ba2473a791aa320e96749c84eb4 @ ec2-54-211-176-156.compute-1.amazonaws.com : 5432 / dbglv87ldmr79s, 
     ssl : { 
@@ -15,4 +15,8 @@ const  { Pool } = require ("pg") ;
         telefone integer,
         ) '
   );
-  await con.query (
+  let res = await con.query ( "inset into  nome ($1)" , [Ana]  ,  "insert into endereco ($2)", [endereco],  "insert into telefone ($5), [556989253] );
+  console.log (res);
+  con.realise ();
+  }
+criarConexao ();
